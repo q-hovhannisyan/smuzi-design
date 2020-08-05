@@ -1,0 +1,189 @@
+<div class="main-wrapper">
+  <div class="top-banner">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-lg-4 text-center pr-1 ">
+          <div class="header-tabs-border left-block ">
+            <p><span>July 1</span>, 2020</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-8 pl-1">
+          <div class="d-flex justify-content-between align-items-center header-tabs-border right-block">
+            <p>Historical Information</p>
+            <div class="buttons-wrapper">
+              <button mat-raised-button class="mr-2">Week</button>
+              <button mat-raised-button class="mr-2">Month</button>
+              <button mat-raised-button class="mr-2">Quarter</button>
+              <button mat-raised-button>Year</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid charts">
+    <div class="row">
+      <div class="col-lg-4 pr-1">
+        <div class="chart-info revenue text-center">
+          <h2>Revenue</h2>
+          <div class="d-flex justify-content-between">
+            <div >
+              <h3>$21,86</h3>
+              <span>RevPAR</span>
+            </div>
+            <div>
+              <h3>$54,11</h3>
+              <span>RevPOR</span>
+            </div>
+            <div>
+              <h3>2,87m</h3>
+              <span>Total Revenue</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="bg-white chart-item d-flex">
+          <div class="w">
+            <apx-chart
+                [series]="chartOptions.series"
+                [chart]="chartOptions.chart"
+                [xaxis]="chartOptions.xaxis"
+                [stroke]="chartOptions.stroke"
+                [tooltip]="chartOptions.tooltip"
+                [dataLabels]="chartOptions.dataLabels"
+                [legend]="chartOptions.legend"
+                [markers]="chartOptions.markers"
+                [grid]="chartOptions.grid"
+                [yaxis]="chartOptions.yaxis"
+                [title]="chartOptions.title"
+            ></apx-chart>
+          </div>
+          <div class="chart-points d-flex justify-content-center align-items-center flex-column">
+            <div class="chart-point">
+              <h4>$21,86</h4>
+              <span>RevPAR</span>
+            </div>
+            <div class="chart-point">
+              <h4>$21,86</h4>
+              <span>RevPAR</span>
+            </div>
+            <div class="chart-point">
+              <h4>$21,86</h4>
+              <span>RevPAR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 pr-1">
+        <div class="chart-info rooms text-center">
+          <h2>Rooms</h2>
+          <div class="d-flex justify-content-between">
+            <div >
+              <h3>$52,38</h3>
+              <span>ADR</span>
+            </div>
+            <div>
+              <h3>66,20%</h3>
+              <span>Occupation Rate</span>
+            </div>
+            <div>
+              <h3>78/80</h3>
+              <span>Available Rooms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="bg-white chart-item d-flex">
+          <div class="w">
+            <apx-chart
+                [series]="secondChartOptions.series"
+                [chart]="secondChartOptions.chart"
+                [xaxis]="secondChartOptions.xaxis"
+                [stroke]="secondChartOptions.stroke"
+                [tooltip]="secondChartOptions.tooltip"
+                [dataLabels]="secondChartOptions.dataLabels"
+                [legend]="secondChartOptions.legend"
+                [markers]="secondChartOptions.markers"
+                [grid]="secondChartOptions.grid"
+                [yaxis]="secondChartOptions.yaxis"
+                [title]="secondChartOptions.title"
+            ></apx-chart>
+          </div>
+          <div class="chart-points d-flex justify-content-center align-items-center flex-column">
+            <div class="chart-point">
+              <h4>$52,38</h4>
+              <span>ADR</span>
+            </div>
+            <div class="chart-point">
+              <h4>66,20%</h4>
+              <span>Occupation Rate</span>
+            </div>
+            <div class="chart-point">
+              <h4>78/80</h4>
+              <span>Available Rooms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 pr-1">
+        <div class="chart-info guests text-center">
+          <h2>Guests</h2>
+          <div class="d-flex justify-content-around">
+            <div >
+              <h3>93</h3>
+              <span>In House</span>
+            </div>
+            <div>
+              <h3>21</h3>
+              <span>Arrivals</span>
+            </div>
+            <div>
+              <h3>25</h3>
+              <span>Departures</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="bg-white chart-item d-flex">
+            <div class="w">
+              <apx-chart
+                  [series]="thirdChartOptions.series"
+                  [chart]="thirdChartOptions.chart"
+                  [xaxis]="thirdChartOptions.xaxis"
+                  [stroke]="thirdChartOptions.stroke"
+                  [tooltip]="thirdChartOptions.tooltip"
+                  [dataLabels]="thirdChartOptions.dataLabels"
+                  [legend]="thirdChartOptions.legend"
+                  [markers]="thirdChartOptions.markers"
+                  [grid]="thirdChartOptions.grid"
+                  [yaxis]="thirdChartOptions.yaxis"
+                  [title]="thirdChartOptions.title"
+              ></apx-chart>
+            </div>
+            <div class="chart-points d-flex justify-content-center align-items-center flex-column">
+              <div class="chart-point">
+                <h4>93</h4>
+                <span>In House</span>
+              </div>
+              <div class="chart-point">
+                <h4>21</h4>
+                <span>Arrivals</span>
+              </div>
+              <div class="chart-point">
+                <h4>25</h4>
+                <span>Departures</span>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

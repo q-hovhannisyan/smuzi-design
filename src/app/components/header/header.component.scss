@@ -1,0 +1,35 @@
+.header_content {
+  margin: 0 auto;
+  .page_header {
+    padding: 20px 20px 20px 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    .logos {
+      display: flex;
+      align-items: center;
+      .first_logo_item {
+        width: 100px;
+        height: 100px;
+      }
+      .second_logo_item {
+        width: 200px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        margin-left: 44px;
+      }
+    }
+    .menu_items {
+      button {
+        margin-right: 20px;
+      }
+      //.cdk-focused.cdk-mouse-focused {
+      //  border: 1px solid black;
+      //}
+    }
+  }
+}
+
