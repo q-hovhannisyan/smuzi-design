@@ -1,4 +1,5 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, ViewChild, OnDestroy } from "@angular/core";
+import {ThemesService} from '../../services/themes.service';
 
 import {
   ChartComponent,
@@ -11,7 +12,8 @@ import {
   ApexYAxis,
   ApexGrid,
   ApexTitleSubtitle,
-  ApexLegend
+  ApexLegend,
+  ApexTheme
 } from "ng-apexcharts";
 
 export type ChartOptions = {
@@ -26,6 +28,7 @@ export type ChartOptions = {
   grid: ApexGrid;
   legend: ApexLegend;
   title: ApexTitleSubtitle;
+  theme: ApexTheme
 };
 export type SecondChartOptions = {
   series: ApexAxisChartSeries;
@@ -58,13 +61,28 @@ export type ThirdChartOptions = {
   templateUrl: './today.component.html',
   styleUrls: ['./today.component.scss']
 })
-export class TodayComponent {
+export class TodayComponent implements OnDestroy{
   @ViewChild("chart") chart: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
   public secondChartOptions: Partial<SecondChartOptions>;
   public thirdChartOptions: Partial<ThirdChartOptions>;
+  public mode = '';
+  public subscription;
 
-  constructor() {
+  constructor(private service: ThemesService) {
+    this.mode = service.name;
+    this.subscription = service.nameChange.subscribe((value) => {
+      this.mode = value;
+      this.updateTheme();
+    });
+    this.updateTheme();
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+  updateTheme() {
     this.chartOptions = {
       series: [
         {
@@ -90,9 +108,10 @@ export class TodayComponent {
       },
       tooltip: {
         fillSeriesColor: false,
+        fillSeriesColor: false,
         marker: {
           show: true,
-          colors: ["#066064", "#0A838E", "#13BDD2"],
+          colors: this.changeFirstColor(this.mode),
         },
       },
       dataLabels: {
@@ -100,7 +119,7 @@ export class TodayComponent {
       },
       stroke: {
         width: 2,
-        colors: ["#066064", "#0A838E", "#13BDD2"],
+        colors: this.changeFirstColor(this.mode),
         curve: "straight",
         dashArray: [0, 0, 0]
       },
@@ -113,30 +132,37 @@ export class TodayComponent {
           fontSize: '18px',
           fontWeight: '800',
           fontFamily: 'Avenir',
-          color: '#000000'
+          color: this.changeColor(this.mode)
         },
       },
       legend: {
         position: 'top',
         horizontalAlign: "right",
         markers : {
-          fillColors: ["#066064", "#0A838E", "#13BDD2"],
+          fillColors: this.changeFirstColor(this.mode),
+          strokeColor: '#fff',
           width: 10,
           height: 10,
-        }
+        },
+        labels: {
+          colors: this.changeColor(this.mode),
+        },
       },
       markers: {
-        colors: ["#ffffff", "#ffffff", "#ffffff"],
+        colors: this.changeDots(this.mode),
         size: 5,
         hover: {
           sizeOffset: 4
         },
         strokeWidth: 3,
-        strokeColors: ['#066064','#0A838E', '#13BDD2']
+        strokeColors: this.changeFirstColor(this.mode)
       },
       xaxis: {
         labels: {
-          trim: false
+          trim: false,
+          style: {
+            colors: this.changeColor(this.mode),
+          },
         },
         categories: [
           "10",
@@ -150,34 +176,32 @@ export class TodayComponent {
         axisTicks: {
           show: true,
           borderType: 'solid',
-          color: '#000',
+          color: '#fff',
           height: 6,
           offsetX: 0,
           offsetY: 0
         }
       },
       yaxis: {
-        // axisTicks: {
-        //   show: true,
-        //   borderType: 'solid',
-        //   color: '#78909C',
-        //   width: 6,
-        //   offsetX: 0,
-        //   offsetY: 0
-        // },
         min: 0,
         max: 120,
         tickAmount: 4,
+        labels: {
+          style: {
+            colors: this.changeColor(this.mode)
+          },
+        }
       },
       grid: {
         xaxis: {
           lines: {
-            show: true
+            show: true,
           }
         },
         borderColor: "#CCCCCC"
       }
     };
+    ///////////////////////
     this.secondChartOptions = {
       series: [
         {
@@ -202,7 +226,7 @@ export class TodayComponent {
       },
       stroke: {
         width: 2,
-        colors: ["#01579B", "#03A9F4" ],
+        colors: this.changeLineColor(this.mode),
         curve: "straight",
         dashArray: [0, 0, 0]
       },
@@ -215,30 +239,36 @@ export class TodayComponent {
           fontSize: '18px',
           fontWeight: '800',
           fontFamily: 'Avenir',
-          color: '#000000'
+          color: this.changeColor(this.mode)
         },
       },
       legend: {
         position: 'top',
         horizontalAlign: "right",
         markers : {
-          fillColors: ["#01579B", "#03A9F4" ],
+          fillColors: this.changeLineColor(this.mode),
           width: 10,
           height: 10,
-        }
+        },
+        labels: {
+          colors: this.changeColor(this.mode),
+        },
       },
       markers: {
-        colors: ["#ffffff", "#ffffff"],
+        colors: this.changeDots(this.mode),
         size: 5,
         hover: {
           sizeOffset: 4
         },
         strokeWidth: 3,
-        strokeColors: ["#01579B" , "#03A9F4"]
+        strokeColors: this.changeLineColor(this.mode)
       },
       xaxis: {
         labels: {
-          trim: false
+          trim: false,
+          style: {
+            colors: this.changeColor(this.mode),
+          },
         },
         categories: [
           "10",
@@ -256,7 +286,7 @@ export class TodayComponent {
           height: 6,
           offsetX: 0,
           offsetY: 0
-        }
+        },
       },
       yaxis: {
         // axisTicks: {
@@ -270,6 +300,11 @@ export class TodayComponent {
         min: 0,
         max: 120,
         tickAmount: 4,
+        labels: {
+          style: {
+            colors: this.changeColor(this.mode)
+          },
+        }
       },
       grid: {
         xaxis: {
@@ -285,10 +320,11 @@ export class TodayComponent {
         {
           name: "Guests",
           data: [78, 80, 63, 60, 97, 38, 70],
-        }, {
-          name: "",
-          data: [],
-        }
+        },
+        // {
+          // name: "",
+          // data: [],
+        // }
       ],
       chart: {
         height: 250,
@@ -303,7 +339,7 @@ export class TodayComponent {
       },
       stroke: {
         width: 2,
-        colors: ["#01579B"],
+        colors: this.changeOneLine(this.mode),
         curve: "straight",
         dashArray: [0, 0, 0]
       },
@@ -316,7 +352,7 @@ export class TodayComponent {
           fontSize: '18px',
           fontWeight: '800',
           fontFamily: 'Avenir',
-          color: '#000000'
+          color: this.changeColor(this.mode)
         },
       },
       legend: {
@@ -324,23 +360,29 @@ export class TodayComponent {
         position: 'top',
         horizontalAlign: "right",
         markers : {
-          fillColors: ["#01579B", 'transparent'],
+          fillColors: this.changeOneLine(this.mode),
           width: 10,
           height: 10,
-        }
+        },
+        labels: {
+          colors: this.changeColor(this.mode),
+        },
       },
       markers: {
-        colors: ["#ffffff"],
+        colors: this.changeDots(this.mode),
         size: 5,
         hover: {
           sizeOffset: 4
         },
         strokeWidth: 3,
-        strokeColors: ["#01579B"]
+        strokeColors: this.changeOneLine(this.mode)
       },
       xaxis: {
         labels: {
-          trim: false
+          trim: false,
+          style: {
+            colors: this.changeColor(this.mode),
+          },
         },
         categories: [
           "10",
@@ -372,6 +414,11 @@ export class TodayComponent {
         min: 0,
         max: 120,
         tickAmount: 4,
+        labels: {
+          style: {
+            colors: this.changeColor(this.mode)
+          },
+        }
       },
       grid: {
         xaxis: {
@@ -383,4 +430,50 @@ export class TodayComponent {
       }
     };
   }
+
+  changeColor(mode) {
+    if (mode === 'dark') {
+      return '#fff';
+    } else if (mode === 'light') {
+      return '#000';
+    } else if (mode === 'orange') {
+      return '#000';
+    }
+  }
+  changeFirstColor(mode) {
+    if (mode === 'dark') {
+      return ['#51D1E0', '#00838F', '#00BCD4'];
+    } else if (mode === 'light') {
+      return ['#066064', '#0A838E', '#13BDD2'];
+    } else if (mode === 'orange') {
+      return ['#FF6F00', '#FF8F00', '#FFD54F'];
+    }
+  }
+  changeLineColor(mode) {
+    if (mode === 'dark') {
+      return ["#4FC3F7", "#03A9F4"];
+    } else if (mode === 'light') {
+      return ["#01579B", "#03A9F4"];
+    } else if (mode === 'orange') {
+      return ['#FF6F00', '#FF8F00'];
+    }
+  }
+  changeOneLine(mode) {
+    if (mode === 'dark') {
+      return ['#7986CB'];
+    } else if (mode === 'light') {
+      return ['#7986CB'];
+    } else if (mode === 'orange') {
+      return ['#FE6D1F'];
+    }
+  }
+
+  changeDots(mode) {
+    if (mode === 'dark') {
+      return ['#283147', '#283147', '#283147'];
+    } else {
+      return ['#ffffff', '#ffffff', '#ffffff'];
+    }
+  }
+
 }

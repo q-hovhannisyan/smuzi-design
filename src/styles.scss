@@ -46,7 +46,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .light-theme {
   min-height: 100vh;
   background: linear-gradient(0, #8E9DA9, #ECF0F2);
-
   .chart-info {
     &.revenue {
       background: linear-gradient(90deg, #11AEC5, #0B8C9F);
@@ -58,7 +57,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       background: linear-gradient(90deg, #385CEC, #2C49BC);
     }
   }
-
   .right-block {
     .buttons-wrapper {
       button {
@@ -71,5 +69,75 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       color: #fff;
     }
   }
+  .charts {
+    .chart-item {
+      background-color: #EEF2F3;
+    }
+  }
+}
 
+
+.dark-theme {
+  min-height: 100vh;
+  background: linear-gradient(0, #2C354A, #828F95);
+  .header_content {
+    .menu_items {
+      color: #ffffff;
+    }
+  }
+  .chart-info {
+    &.revenue {
+      background: linear-gradient(90deg, #055B5F, #03494C);
+    }
+    &.rooms {
+      background: linear-gradient(90deg, #025490, #024473);
+    }
+    &.guests {
+      background: linear-gradient(90deg, #182574, #131D5D);
+    }
+  }
+  .top-banner {
+    .left-block, .right-block {
+      color: #EEF2F3;
+    }
+    .right-block {
+      .buttons-wrapper {
+        button {
+          background-color: #859398;
+          color: #000000;
+          border-color: #000000;
+        }
+      }
+    }
+  }
+  .charts {
+    .chart-item {
+      background-color: #283147;
+      .chart-point {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+
+.orange-theme {
+  min-height: 100vh;
+  background: linear-gradient(0, #8E9DA9, #ECF0F2);
+  .chart-info {
+    &.revenue {
+      background: linear-gradient(90deg, #F1B72E, #C09223);
+    }
+    &.rooms {
+      background: linear-gradient(90deg, #F08723, #BF6C1A);
+    }
+    &.guests {
+      background: linear-gradient(90deg, #F03815, #C02C0F);
+    }
+  }
+  .charts {
+    .chart-item {
+      background-color: #EEF2F3;
+    }
+  }
 }

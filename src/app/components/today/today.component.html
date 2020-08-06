@@ -12,7 +12,7 @@
           <div class="d-flex justify-content-between align-items-center header-tabs-border right-block">
             <p>Historical Information</p>
             <div class="buttons-wrapper">
-              <button mat-raised-button class="mr-2">Week</button>
+              <button mat-raised-button class="mr-2" (click)="updateTheme('dark')">Week</button>
               <button mat-raised-button class="mr-2">Month</button>
               <button mat-raised-button class="mr-2">Quarter</button>
               <button mat-raised-button>Year</button>
@@ -43,8 +43,8 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-8">
-        <div class="bg-white chart-item d-flex">
+      <div class="col-lg-8 pl-1">
+        <div class="chart-item d-flex">
           <div class="w">
             <apx-chart
                 [series]="chartOptions.series"
@@ -58,6 +58,7 @@
                 [grid]="chartOptions.grid"
                 [yaxis]="chartOptions.yaxis"
                 [title]="chartOptions.title"
+                [theme]="chartOptions.theme"
             ></apx-chart>
           </div>
           <div class="chart-points d-flex justify-content-center align-items-center flex-column">
@@ -97,8 +98,8 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-8">
-        <div class="bg-white chart-item d-flex">
+      <div class="col-lg-8 pl-1">
+        <div class="chart-item d-flex">
           <div class="w">
             <apx-chart
                 [series]="secondChartOptions.series"
@@ -151,8 +152,8 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-8">
-        <div class="bg-white chart-item d-flex">
+      <div class="col-lg-8 pl-1">
+        <div class="chart-item d-flex">
             <div class="w">
               <apx-chart
                   [series]="thirdChartOptions.series"

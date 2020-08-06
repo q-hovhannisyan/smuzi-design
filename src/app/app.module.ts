@@ -10,6 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { TodayComponent } from './components/today/today.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { MatMenuModule} from '@angular/material/menu';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,10 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     MatButtonModule,
     MatIconModule,
     MatGridListModule,
-    NgApexchartsModule
+    NgApexchartsModule,
+    MatMenuModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnChanges, OnInit} from '@angular/core';
+import {ThemesService} from '../../services/themes.service';
 
 @Component({
   selector: 'app-header',
@@ -6,11 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  mode = '';
 
-  constructor() {
+  constructor(private service: ThemesService) {
+    const theme = localStorage.getItem('theme-mode');
+    if (theme) {
+      this.service.change(theme);
+    }
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
+  changeTheme(mode) {
+    this.mode = mode;
+    this.service.change(mode);
+    localStorage.setItem('theme-mode', mode.toString());
+  }
 }
+

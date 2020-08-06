@@ -14,7 +14,14 @@
       <button mat-button>MARKET</button>
       <button mat-button>HISTORIC</button>
       <button mat-button>STAFF</button>
-      <button mat-button> <mat-icon>brightness_6</mat-icon></button>
+<!--      <button mat-button> </button>-->
+
+      <button mat-button [matMenuTriggerFor]="beforeMenu" class="mode-btn"><mat-icon>brightness_6</mat-icon></button>
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button mat-menu-item (click)="changeTheme('light')">Light Mode</button>
+        <button mat-menu-item (click)="changeTheme('dark')">Dark Mode</button>
+        <button mat-menu-item (click)="changeTheme('orange')">Orange Mode</button>
+      </mat-menu>
     </div>
   </div>
 </div>
