@@ -29,6 +29,7 @@ $angularDashboard-theme: mat-light-theme($angularDashboard-primary, $angularDash
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 @font-face {
   font-family: 'Roboto', sans-serif;
@@ -74,9 +75,62 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       background-color: #EEF2F3;
     }
   }
+  /* ----- market ----- */
+  .market {
+    .header-title {
+      border-bottom: 1px solid #000;
+    }
+    .months-block {
+      .first-progress {
+        background-color: #69C9D7;
+        .progress-bar {
+          background-color: #12B9D2;
+        }
+      }
+      .second-progress {
+        background-color: #68B5E1;
+        .progress-bar {
+          background-color: #0594E6;
+        }
+      }
+      .third-progress {
+        background-color: #859BEA;
+        .progress-bar {
+          background-color: #3B61F9;
+        }
+      }
+    }
+    .competitors-prices {
+      background-color: #EEF2F3;
+      table {
+        td {
+          div {
+            &.text-blue {
+              color: #1A237E;
+            }
+            &.text-red {
+              color: #FF0000;
+            }
+            &.text-green {
+              color: #558B2F;
+            }
+          }
+        }
+      }
+    }
+    .first-datePicker {
+      background: linear-gradient(90deg, #11AFC7, #0A8394);
+    }
+    .second-datePicker {
+      background: linear-gradient(90deg, #0593E5, #0368A2);
+    }
+    .third-datePicker {
+      background: linear-gradient(90deg, #3A60F6, #2945B1);
+    }
+  }
 }
 
-
+/* ------------- dark theme ---------- */
 .dark-theme {
   min-height: 100vh;
   background: linear-gradient(0, #2C354A, #828F95);
@@ -118,9 +172,62 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       }
     }
   }
+  /* ----- market ----- */
+  .market {
+    .header-title {
+      border-bottom: 1px solid #ffffff;
+      color: #ffffff;
+    }
+    .months-block {
+      span {
+        color: #ffffff;
+      }
+      .first-progress {
+        background-color: #3C7176;
+        .progress-bar {
+          background-color: #006064;
+        }
+      }
+      .second-progress {
+        background-color: #3B6D90;
+        .progress-bar {
+          background-color: #01579B;
+        }
+      }
+      .third-progress {
+        background-color: #475382;
+        .progress-bar {
+          background-color: #1A237E;
+        }
+      }
+    }
+    .competitors-prices {
+      background-color: #283048;
+      color: #ffffff;
+      table {
+        td {
+          div {
+            &.text-blue {
+              color: #ffffff;
+            }
+            &.text-red {
+              color: #FF0000;
+            }
+            &.text-green {
+              color: #6EFF00;
+            }
+          }
+        }
+      }
+    }
+    .third-datePicker {
+      background: linear-gradient(90deg, #19277A, #111C57);
+    }
+  }
 }
 
 
+/* --------- orange-theme ---------- */
 .orange-theme {
   min-height: 100vh;
   background: linear-gradient(0, #8E9DA9, #ECF0F2);
@@ -138,6 +245,53 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .charts {
     .chart-item {
       background-color: #EEF2F3;
+    }
+  }
+  /* ----- market ----- */
+  .market {
+    .header-title {
+      border-bottom: 1px solid #000;
+    }
+    .months-block {
+      .first-progress {
+        background-color: #E7CD76;
+        .progress-bar {
+          background-color: #FFC232;
+        }
+      }
+      .second-progress {
+        background-color: #E7B374;
+        .progress-bar {
+          background-color: #FE8F26;
+        }
+      }
+      .third-progress {
+        background-color: #E68971;
+        .progress-bar {
+          background-color: #FD3A17;
+        }
+      }
+    }
+    .competitors-prices {
+      background-color: #EEF2F3;
+      table {
+        td {
+          div {
+            &.text-blue {
+              color: #1A237E;
+            }
+            &.text-red {
+              color: #FF0000;
+            }
+            &.text-green {
+              color: #558B2F;
+            }
+          }
+        }
+      }
+    }
+    .third-datePicker {
+      background: linear-gradient(90deg, #FB3916, #B4290D);
     }
   }
 }

@@ -1,0 +1,67 @@
+.market {
+  padding-bottom: 20px;
+  .header-title {
+    height: 100%;
+    h3 {
+      font-size: 24px;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+  }
+  .months-block {
+    span {
+     display: block;
+      padding-bottom: 4px;
+    }
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    .progress {
+      height: 30px;
+    }
+    .progress-bar {
+      width: 50%;
+      height: 30px;
+      padding-right: 8px;
+      text-align: end;
+    }
+  }
+  .competitors-prices {
+    margin: 20px 0 10px;
+    padding: 20px 56px 16px 40px;
+    border-radius: 4px;
+    h2 {
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 25px;
+      text-transform: uppercase;
+    }
+    table {
+      width: 100%;
+
+      thead {
+        tr {
+          font-weight: bold;
+        }
+      }
+      td, th {
+        width: 12.5%;
+        div {
+          height: 58px;
+          margin: 4px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid #CCCCCC;
+          border-radius: 4px;
+          font-weight: bold;
+          font-family: 'Roboto', sans-serif;
+        }
+      }
+    }
+  }
+  .datePicker {
+    width: 100%;
+    height: 100%;
+  }
+}

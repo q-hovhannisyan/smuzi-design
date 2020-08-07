@@ -10,11 +10,10 @@
 
     </div>
     <div class="menu_items">
-      <button mat-button>TODAY</button>
-      <button mat-button>MARKET</button>
+      <button mat-button [routerLink]="['/']">TODAY</button>
+      <button mat-button [routerLink]="['/market']">MARKET</button>
       <button mat-button>HISTORIC</button>
       <button mat-button>STAFF</button>
-<!--      <button mat-button> </button>-->
 
       <button mat-button [matMenuTriggerFor]="beforeMenu" class="mode-btn"><mat-icon>brightness_6</mat-icon></button>
       <mat-menu #beforeMenu="matMenu" xPosition="before">

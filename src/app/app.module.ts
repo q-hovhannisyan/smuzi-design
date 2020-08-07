@@ -12,12 +12,14 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { MatMenuModule} from '@angular/material/menu';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MarketComponent } from './components/market/market.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    TodayComponent
+    TodayComponent,
+    MarketComponent
   ],
   imports: [
     BrowserModule,

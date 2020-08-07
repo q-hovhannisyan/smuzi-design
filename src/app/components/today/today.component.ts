@@ -107,8 +107,8 @@ export class TodayComponent implements OnDestroy{
         },
       },
       tooltip: {
-        fillSeriesColor: false,
-        fillSeriesColor: false,
+        // fillSeriesColor: false,
+        // fillSeriesColor: false,
         marker: {
           show: true,
           colors: this.changeFirstColor(this.mode),
