@@ -1,0 +1,16 @@
+.historic {
+  padding-bottom: 20px;
+  .header-title {
+    height: 100%;
+    h3 {
+      font-size: 24px;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+  }
+  .chart-item {
+    filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.24));
+    border-radius: 4px;
+    margin-top: 20px;
+  }
+}

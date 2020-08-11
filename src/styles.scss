@@ -31,6 +31,7 @@ $angularDashboard-theme: mat-light-theme($angularDashboard-primary, $angularDash
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
 
+
 @font-face {
   font-family: 'Roboto', sans-serif;
 }
@@ -128,6 +129,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       background: linear-gradient(90deg, #3A60F6, #2945B1);
     }
   }
+  /* ----- historic ----- */
+  .historic {
+    .header-title {
+      border-bottom: 1px solid #000;
+    }
+    .chart-item {
+      background-color: #EEF2F3;
+    }
+  }
+
 }
 
 /* ------------- dark theme ---------- */
@@ -220,8 +231,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         }
       }
     }
+    .first-datePicker {
+      background: linear-gradient(90deg, #055F63, #034447);
+    }
+    .second-datePicker {
+      background: linear-gradient(90deg, #025997, #023F6C);
+    }
     .third-datePicker {
       background: linear-gradient(90deg, #19277A, #111C57);
+    }
+  }
+  /* ----- historic ----- */
+  .historic {
+    .header-title {
+      border-bottom: 1px solid #ffffff;
+      color: #ffffff;
     }
   }
 }
@@ -290,8 +314,23 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         }
       }
     }
+    .first-datePicker {
+      background: linear-gradient(90deg, #FDC131, #B58A20);
+    }
+    .second-datePicker {
+      background: linear-gradient(90deg, #FD8E25, #B46618);
+    }
     .third-datePicker {
       background: linear-gradient(90deg, #FB3916, #B4290D);
     }
   }
+
+  /* ----- historic ----- */
+  .historic {
+    .header-title {
+      border-bottom: 1px solid #000;
+    }
+  }
 }
+
+@import "~@mobiscroll/angular/dist/css/mobiscroll.scss";

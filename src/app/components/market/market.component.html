@@ -48,9 +48,9 @@
                 </td>
                 <td *ngFor="let one of item.month">
                   <div [ngClass]="{
-                        'text-blue':one.status === 'available',
-                        'text-green':one.status === 'reserved',
-                        'text-red':one.status === 'busy'
+                        'text-blue': one.status === 'available',
+                        'text-green': one.status === 'reserved',
+                        'text-red': one.status === 'busy'
                       }">{{one.point}}</div>
                 </td>
               </tr>
@@ -61,13 +61,375 @@
         <div class="col-lg-4">
           <div class="row">
             <div class="col-lg-12">
-              <div class="datePicker first-datePicker mb-5">
-                JULY/2020
+              <div class="datePicker first-datePicker">
+                <div class="month">
+                  <span class="monthname">July 2020</span>
+                  <div class="daynames">
+                    <span class="dayname" style="margin-left: 12px">SUN</span>
+                    <span class="dayname">MON</span>
+                    <span class="dayname">TUE</span>
+                    <span class="dayname">WED</span>
+                    <span class="dayname">THU</span>
+                    <span class="dayname">FRI</span>
+                    <span class="dayname">SAT</span>
+                  </div>
+                  <div class="days d-flex flex-wrap">
+                    <div class = "day fday">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day fday">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day fday">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day fday">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day fday">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day fday">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col-lg-12">
-              <div class="datePicker second-datePicker mb-5">
-                AUGUST/2020
+              <div class="datePicker second-datePicker">
+                <div class="month">
+                  <span class="monthname">July 2020</span>
+                  <div class="daynames">
+                    <span class="dayname" style="margin-left: 12px">SUN</span>
+                    <span class="dayname">MON</span>
+                    <span class="dayname">TUE</span>
+                    <span class="dayname">WED</span>
+                    <span class="dayname">THU</span>
+                    <span class="dayname">FRI</span>
+                    <span class="dayname">SAT</span>
+                  </div>
+                  <div class="days d-flex flex-wrap">
+                    <div class = "day fday">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day fday">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day fday">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day fday">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day fday">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day fday">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                    <div class = "day">
+                      <span></span>
+                      <span>&#8205;</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -96,7 +458,188 @@
       </div>
       <div class="col-lg-4">
         <div class="datePicker third-datePicker">
-          SEPTEMBER/2020
+          <div class="month">
+            <span class="monthname">July 2020</span>
+            <div class="daynames">
+              <span class="dayname" style="margin-left: 12px">SUN</span>
+              <span class="dayname">MON</span>
+              <span class="dayname">TUE</span>
+              <span class="dayname">WED</span>
+              <span class="dayname">THU</span>
+              <span class="dayname">FRI</span>
+              <span class="dayname">SAT</span>
+            </div>
+            <div class="days d-flex flex-wrap">
+              <div class = "day fday">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day fday">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day fday">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day fday">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day fday">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day fday">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+              <div class = "day">
+                <span></span>
+                <span>&#8205;</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

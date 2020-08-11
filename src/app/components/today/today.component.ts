@@ -107,11 +107,11 @@ export class TodayComponent implements OnDestroy{
         },
       },
       tooltip: {
-        // fillSeriesColor: false,
-        // fillSeriesColor: false,
+        enabled: true,
+        fillSeriesColor: false,
         marker: {
           show: true,
-          colors: this.changeFirstColor(this.mode),
+          fillColors: this.changeFirstColor(this.mode),
         },
       },
       dataLabels: {
@@ -242,6 +242,14 @@ export class TodayComponent implements OnDestroy{
           color: this.changeColor(this.mode)
         },
       },
+      tooltip: {
+        enabled: true,
+        fillSeriesColor: false,
+        marker: {
+          show: true,
+          fillColors: this.changeLineColor(this.mode),
+        },
+      },
       legend: {
         position: 'top',
         horizontalAlign: "right",
@@ -366,6 +374,14 @@ export class TodayComponent implements OnDestroy{
         },
         labels: {
           colors: this.changeColor(this.mode),
+        },
+      },
+      tooltip: {
+        enabled: true,
+        fillSeriesColor: false,
+        marker: {
+          show: true,
+          fillColors: this.changeOneLine(this.mode),
         },
       },
       markers: {

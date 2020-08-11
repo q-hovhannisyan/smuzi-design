@@ -1,0 +1,41 @@
+<div class="historic">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 pr-1">
+        <div class="header-title text-center">
+          <h3>Historical Series</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="chart-item">
+            <apx-chart
+                [series]="chartOptions.series"
+                [chart]="chartOptions.chart"
+                [yaxis]="chartOptions.yaxis"
+                [xaxis]="chartOptions.xaxis"
+                [labels]="chartOptions.labels"
+                [stroke]="chartOptions.stroke"
+                [title]="chartOptions.title"
+                [dataLabels]="chartOptions.dataLabels"
+                [fill]="chartOptions.fill"
+                [tooltip]="chartOptions.tooltip"
+            ></apx-chart>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="chart-item">
+
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

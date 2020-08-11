@@ -14,12 +14,20 @@ import { MatMenuModule} from '@angular/material/menu';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MarketComponent } from './components/market/market.component';
 
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { MbscModule } from '@mobiscroll/angular';
+import { HistoricComponent } from './components/historic/historic.component';
+import { StaffComponent } from './components/staff/staff.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     TodayComponent,
-    MarketComponent
+    MarketComponent,
+    HistoricComponent,
+    StaffComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +39,11 @@ import { MarketComponent } from './components/market/market.component';
     NgApexchartsModule,
     MatMenuModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientJsonpModule,
+    MbscModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

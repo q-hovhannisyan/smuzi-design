@@ -1,5 +1,7 @@
-import {Component, OnDestroy, ViewChild} from '@angular/core';
+import {Component, OnDestroy, ViewChild, OnInit} from '@angular/core';
 import { ThemesService } from '../../services/themes.service';
+import { HttpClient } from '@angular/common/http';
+
 
 import {
   ChartComponent,
@@ -13,8 +15,9 @@ import {
   ApexGrid,
   ApexTitleSubtitle,
   ApexLegend,
-  ApexTheme
-} from "ng-apexcharts";
+  ApexTheme,
+  ApexTooltip
+} from 'ng-apexcharts';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -23,7 +26,7 @@ export type ChartOptions = {
   stroke: ApexStroke;
   dataLabels: ApexDataLabels;
   markers: ApexMarkers;
-  tooltip: any; // ApexTooltip;
+  tooltip: ApexTooltip;
   yaxis: ApexYAxis;
   grid: ApexGrid;
   legend: ApexLegend;
@@ -36,8 +39,9 @@ export type ChartOptions = {
   templateUrl: './market.component.html',
   styleUrls: ['./market.component.scss']
 })
-export class MarketComponent implements OnDestroy {
-  @ViewChild("chart") chart: ChartComponent;
+
+export class MarketComponent implements OnDestroy, OnInit {
+  @ViewChild('chart') chart: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
   public mode = '';
   public subscription;
@@ -242,13 +246,61 @@ export class MarketComponent implements OnDestroy {
       ]
     },
   ];
-  constructor(private service: ThemesService) {
+  public months: any = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  public curYear: any = new Date().getFullYear();
+  public curMonth: any = new Date().getMonth();
+  public arr: any = [];
+
+  constructor(private service: ThemesService, private http: HttpClient) {
     this.mode = service.name;
     this.subscription = service.nameChange.subscribe((value) => {
       this.mode = value;
       this.updateTheme();
     });
     this.updateTheme();
+  }
+  fillArr(dc){
+    for(let i = 0; i < dc; i++)
+    {
+      this.arr.push(Math.floor(Math.random() * 100));
+    }
+  }
+  MonthInfo(month, year){
+    const firstDay    = new Date(year, month).getDay();
+    const daysInMonth = 32 - new Date(year, month, 32).getDate();
+    return [firstDay, daysInMonth];
+  }
+  addMonth(k)
+  {
+    const month       = this.curMonth;
+    const monthDiv    = document.getElementsByClassName('month')[k];
+    monthDiv.getElementsByClassName('monthname')[0].innerHTML = this.months[month % 12] + '/' + this.curYear;
+    const days        = monthDiv.getElementsByClassName('day');
+    const fd          = this.MonthInfo(month, this.curYear)[0];
+    const daysInMonth = this.MonthInfo(month, this.curYear)[1];
+    this.fillArr(daysInMonth);
+    for (let i = 0; i < 42; i++) {
+      if (i < daysInMonth + fd && i >= fd){
+        days[i].childNodes[1].textContent = JSON.stringify(i - fd + 1);
+        days[i].childNodes[0].textContent = this.arr[i - fd];
+        (<HTMLElement> days[i]).style.backgroundColor = 'rgb(' + '255, 255, 255' + ', ' + ((50 - this.arr[i - fd]) > 0 ? (50 - (this.arr[i - fd])) : 0) / 100 + ')';
+      }
+      else{
+        days[i].classList.add('empty');
+      }
+
+    }
+    if(this.curMonth >= 11)
+    {
+      this.curYear++;
+    }
+    this.curMonth++;
+    this.curMonth %= 12;
+  }
+  ngOnInit() {
+    this.addMonth(0);
+    this.addMonth(1);
+    this.addMonth(2);
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();
@@ -258,38 +310,32 @@ export class MarketComponent implements OnDestroy {
     this.chartOptions = {
       series: [
         {
-          name: "Hotel A",
+          name: 'Hotel A',
           data: [32, 27, 108, 33, 106, 96, 98]
         },
         {
-          name: "Hotel B",
+          name: 'Hotel B',
           data: [103, 75, 61, 77, 87, 88, 68],
         },
         {
-          name: "Hotel C",
+          name: 'Hotel C',
           data: [33, 59, 59, 28, 86, 60, 120]
         },
         {
-          name: "Hotel D",
+          name: 'Hotel D',
           data: [51, 112, 33, 58, 117, 60, 91]
         },
         {
-          name: "Hotel E",
-          data: [45, 30, 21, 42, 43, 78, 38]
+          name: 'Hotel E',
+          data: [45, 30, 21, 42, 43, 78, 38],
         }
       ],
       chart: {
         height: 250,
         width: '100%',
-        type: "line",
+        type: 'line',
         toolbar: {
           show: false
-        },
-      },
-      tooltip: {
-        marker: {
-          show: true,
-          colors: this.changeLineColor(this.mode),
         },
       },
       dataLabels: {
@@ -298,12 +344,12 @@ export class MarketComponent implements OnDestroy {
       stroke: {
         width: 2,
         colors: this.changeLineColor(this.mode),
-        curve: "straight",
+        curve: 'straight',
         dashArray: [0, 0, 0]
       },
       title: {
-        text: "COMPARISON CHART",
-        align: "left",
+        text: 'COMPARISON CHART',
+        align: 'left',
         offsetY: 30,
         offsetX: 10,
         style: {
@@ -313,9 +359,17 @@ export class MarketComponent implements OnDestroy {
           color: this.changeColor(this.mode)
         },
       },
+      tooltip: {
+        enabled: true,
+        fillSeriesColor: false,
+        marker: {
+          show: true,
+          fillColors: this.changeLineColor(this.mode),
+        },
+      },
       legend: {
         position: 'top',
-        horizontalAlign: "right",
+        horizontalAlign: 'right',
         markers : {
           fillColors: this.changeLineColor(this.mode),
           strokeColor: '#fff',
@@ -343,13 +397,13 @@ export class MarketComponent implements OnDestroy {
           },
         },
         categories: [
-          "57",
-          "59",
-          "55",
-          "65",
-          "67",
-          "66",
-          "66",
+          '57',
+          '59',
+          '55',
+          '65',
+          '67',
+          '66',
+          '66',
         ],
         axisTicks: {
           show: true,
@@ -376,7 +430,7 @@ export class MarketComponent implements OnDestroy {
             show: true,
           }
         },
-        borderColor: "#CCCCCC"
+        borderColor: '#CCCCCC'
       }
     };
   }
@@ -392,11 +446,11 @@ export class MarketComponent implements OnDestroy {
   }
   changeLineColor(mode) {
     if (mode === 'dark') {
-      return ["#025998", "#0594E6", "#51C4F4", "#0EABF1", "#0679BA"];
+      return ['#025998', '#0594E6', '#51C4F4', '#0EABF1', '#0679BA'];
     } else if (mode === 'light') {
-      return ["#025998", "#0594E6", "#51C4F4", "#0EABF1", "#0679BA"];
+      return ['#025998', '#0594E6', '#51C4F4', '#0EABF1', '#0679BA'];
     } else if (mode === 'orange') {
-      return ['#BE3417', '#FE552D', "#FFBF32", "#FE9627", "#FE6D1F"];
+      return ['#BE3417', '#FE552D', '#FFBF32', '#FE9627', '#FE6D1F'];
     }
   }
   changeDots(mode) {
@@ -406,7 +460,6 @@ export class MarketComponent implements OnDestroy {
       return ['#ffffff', '#ffffff', '#ffffff'];
     }
   }
-
 }
 
 

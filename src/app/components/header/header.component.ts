@@ -1,4 +1,4 @@
-import {Component, OnChanges, OnInit} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {ThemesService} from '../../services/themes.service';
 
 @Component({
@@ -6,17 +6,22 @@ import {ThemesService} from '../../services/themes.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-  mode = '';
+export class HeaderComponent implements OnDestroy {
+  public mode = '';
+  public subscription;
 
   constructor(private service: ThemesService) {
+    this.mode = service.name;
+    this.subscription = service.nameChange.subscribe((value) => {
+      this.mode = value;
+    });
     const theme = localStorage.getItem('theme-mode');
     if (theme) {
       this.service.change(theme);
     }
   }
-
-  ngOnInit() {
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   changeTheme(mode) {
