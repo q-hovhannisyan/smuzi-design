@@ -12,28 +12,91 @@
     <div class="row">
       <div class="col-lg-4">
         <div class="chart-item">
-            <apx-chart
-                [series]="chartOptions.series"
-                [chart]="chartOptions.chart"
-                [yaxis]="chartOptions.yaxis"
-                [xaxis]="chartOptions.xaxis"
-                [labels]="chartOptions.labels"
-                [stroke]="chartOptions.stroke"
-                [title]="chartOptions.title"
-                [dataLabels]="chartOptions.dataLabels"
-                [fill]="chartOptions.fill"
-                [tooltip]="chartOptions.tooltip"
-            ></apx-chart>
+          <app-historic-chart-item [title]="'ACR PER MONTH - HISTORICAL SERIES'"></app-historic-chart-item>
         </div>
       </div>
       <div class="col-lg-4">
         <div class="chart-item">
-
+          <app-historic-chart-item [title]="'OCCUP RATE (%)'"></app-historic-chart-item>
         </div>
       </div>
       <div class="col-lg-4">
-        <div>
-
+        <div class="chart-item">
+          <apx-chart
+              [series]="areaChartOptions.series"
+              [chart]="areaChartOptions.chart"
+              [yaxis]="areaChartOptions.yaxis"
+              [xaxis]="areaChartOptions.xaxis"
+              [labels]="areaChartOptions.labels"
+              [stroke]="areaChartOptions.stroke"
+              [title]="areaChartOptions.title"
+              [dataLabels]="areaChartOptions.dataLabels"
+              [fill]="areaChartOptions.fill"
+              [legend]="areaChartOptions.legend"
+              [tooltip]="areaChartOptions.tooltip"
+              [grid]="areaChartOptions.grid"
+              [markers]="areaChartOptions.markers"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="chart-item">
+          <app-historic-chart-item [title]="'RAVPOR PER MONTH - HISTORICAL SERIES'"></app-historic-chart-item>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="chart-item">
+          <app-historic-chart-item [title]="'RAVPOR PER MONTH - HISTORICAL SERIES'"></app-historic-chart-item>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="chart-item">
+          <apx-chart
+              [series]="columnChartOptions.series"
+              [chart]="columnChartOptions.chart"
+              [yaxis]="columnChartOptions.yaxis"
+              [xaxis]="columnChartOptions.xaxis"
+              [labels]="columnChartOptions.labels"
+              [stroke]="columnChartOptions.stroke"
+              [title]="columnChartOptions.title"
+              [dataLabels]="columnChartOptions.dataLabels"
+              [fill]="columnChartOptions.fill"
+              [legend]="columnChartOptions.legend"
+              [tooltip]="columnChartOptions.tooltip"
+              [grid]="columnChartOptions.grid"
+              [markers]="columnChartOptions.markers"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="chart-item d-flex">
+          <apx-chart
+              [series]="columnsChartOptions.series"
+              [chart]="columnsChartOptions.chart"
+              [yaxis]="columnsChartOptions.yaxis"
+              [xaxis]="columnsChartOptions.xaxis"
+              [labels]="columnsChartOptions.labels"
+              [stroke]="columnsChartOptions.stroke"
+              [title]="columnsChartOptions.title"
+              [dataLabels]="columnsChartOptions.dataLabels"
+              [fill]="columnsChartOptions.fill"
+              [legend]="columnsChartOptions.legend"
+              [tooltip]="columnsChartOptions.tooltip"
+              [grid]="columnsChartOptions.grid"
+              [markers]="columnsChartOptions.markers"
+          ></apx-chart>
+          <div class="diary-media-content px-3">
+            <h3>
+              Diária Média (R$) Dezembro/2019
+            </h3>
+            <p>
+              Na diária média, a maior parte dos municípios apresentou quedas, sendo as mais expressivas em Campinas (-11,2%), Rio de Janeiro (-11,6%) e Belém (-13,5%). Dentre as variações positivas, as mais altas foram em Recife (8,9%) e Goiânia (10,4%).
+            </p>
+          </div>
         </div>
       </div>
     </div>

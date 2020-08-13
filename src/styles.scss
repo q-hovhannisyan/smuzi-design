@@ -138,7 +138,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       background-color: #EEF2F3;
     }
   }
-
 }
 
 /* ------------- dark theme ---------- */
@@ -247,6 +246,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       border-bottom: 1px solid #ffffff;
       color: #ffffff;
     }
+    .chart-item {
+      background-color: #283048;
+      .diary-media-content {
+        color: #fff;
+      }
+    }
   }
 }
 
@@ -330,7 +335,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     .header-title {
       border-bottom: 1px solid #000;
     }
+    .chart-item {
+      background-color: #EEF2F3;
+    }
   }
 }
 
-@import "~@mobiscroll/angular/dist/css/mobiscroll.scss";

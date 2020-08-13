@@ -13,11 +13,10 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { MatMenuModule} from '@angular/material/menu';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MarketComponent } from './components/market/market.component';
-
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
-import { MbscModule } from '@mobiscroll/angular';
 import { HistoricComponent } from './components/historic/historic.component';
 import { StaffComponent } from './components/staff/staff.component';
+import { HistoricChartItemComponent } from './components/historic-chart-item/historic-chart-item.component';
 
 
 @NgModule({
@@ -27,7 +26,8 @@ import { StaffComponent } from './components/staff/staff.component';
     TodayComponent,
     MarketComponent,
     HistoricComponent,
-    StaffComponent
+    StaffComponent,
+    HistoricChartItemComponent
   ],
   imports: [
     BrowserModule,
@@ -42,8 +42,6 @@ import { StaffComponent } from './components/staff/staff.component';
     ReactiveFormsModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    MbscModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnDestroy } from "@angular/core";
+import { Component, ViewChild, OnDestroy } from '@angular/core';
 import {ThemesService} from '../../services/themes.service';
 
 import {
@@ -14,7 +14,7 @@ import {
   ApexTitleSubtitle,
   ApexLegend,
   ApexTheme
-} from "ng-apexcharts";
+} from 'ng-apexcharts';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -62,7 +62,7 @@ export type ThirdChartOptions = {
   styleUrls: ['./today.component.scss']
 })
 export class TodayComponent implements OnDestroy{
-  @ViewChild("chart") chart: ChartComponent;
+  @ViewChild('chart') chart: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
   public secondChartOptions: Partial<SecondChartOptions>;
   public thirdChartOptions: Partial<ThirdChartOptions>;
@@ -83,25 +83,26 @@ export class TodayComponent implements OnDestroy{
   }
 
   updateTheme() {
+    /*-------First Chart--------- */
     this.chartOptions = {
       series: [
         {
-          name: "RevPAR",
+          name: 'RevPAR',
           data: [100, 78, 91, 13, 40, 31, 100]
         },
         {
-          name: "RevPOR",
+          name: 'RevPOR',
           data: [78, 80, 63, 60, 97, 38, 70],
         },
         {
-          name: "Total",
+          name: 'Total',
           data: [110, 14, 65, 70, 105, 117, 75]
         }
       ],
       chart: {
         height: 250,
         width: 900,
-        type: "line",
+        type: 'line',
         toolbar: {
           show: false
         },
@@ -120,24 +121,24 @@ export class TodayComponent implements OnDestroy{
       stroke: {
         width: 2,
         colors: this.changeFirstColor(this.mode),
-        curve: "straight",
+        curve: 'straight',
         dashArray: [0, 0, 0]
       },
       title: {
-        text: "REVENUE",
-        align: "left",
+        text: 'REVENUE',
+        align: 'left',
         offsetY: 30,
         offsetX: 10,
         style: {
           fontSize: '18px',
           fontWeight: '800',
-          fontFamily: 'Avenir',
+          fontFamily: 'Roboto',
           color: this.changeColor(this.mode)
         },
       },
       legend: {
         position: 'top',
-        horizontalAlign: "right",
+        horizontalAlign: 'right',
         markers : {
           fillColors: this.changeFirstColor(this.mode),
           strokeColor: '#fff',
@@ -165,13 +166,13 @@ export class TodayComponent implements OnDestroy{
           },
         },
         categories: [
-          "10",
-          "11",
-          "12",
-          "13",
-          "14",
-          "15",
-          "16",
+          '10',
+          '11',
+          '12',
+          '13',
+          '14',
+          '15',
+          '16',
         ],
         axisTicks: {
           show: true,
@@ -198,25 +199,25 @@ export class TodayComponent implements OnDestroy{
             show: true,
           }
         },
-        borderColor: "#CCCCCC"
+        borderColor: '#CCCCCC'
       }
     };
-    ///////////////////////
+    /*-------Second Chart--------- */
     this.secondChartOptions = {
       series: [
         {
-          name: "Occupation Rate",
+          name: 'Occupation Rate',
           data: [78, 80, 63, 60, 97, 38, 70],
         },
         {
-          name: "ADR",
+          name: 'ADR',
           data: [100, 78, 91, 13, 40, 31, 100]
         },
       ],
       chart: {
         height: 250,
         width: 900,
-        type: "line",
+        type: 'line',
         toolbar: {
           show: false
         },
@@ -227,18 +228,18 @@ export class TodayComponent implements OnDestroy{
       stroke: {
         width: 2,
         colors: this.changeLineColor(this.mode),
-        curve: "straight",
+        curve: 'straight',
         dashArray: [0, 0, 0]
       },
       title: {
-        text: "ROOMS",
-        align: "left",
+        text: 'ROOMS',
+        align: 'left',
         offsetY: 30,
         offsetX: 10,
         style: {
           fontSize: '18px',
           fontWeight: '800',
-          fontFamily: 'Avenir',
+          fontFamily: 'Roboto',
           color: this.changeColor(this.mode)
         },
       },
@@ -252,7 +253,7 @@ export class TodayComponent implements OnDestroy{
       },
       legend: {
         position: 'top',
-        horizontalAlign: "right",
+        horizontalAlign: 'right',
         markers : {
           fillColors: this.changeLineColor(this.mode),
           width: 10,
@@ -279,32 +280,24 @@ export class TodayComponent implements OnDestroy{
           },
         },
         categories: [
-          "10",
-          "11",
-          "12",
-          "13",
-          "14",
-          "15",
-          "16",
+          '10',
+          '11',
+          '12',
+          '13',
+          '14',
+          '15',
+          '16',
         ],
         axisTicks: {
           show: true,
           borderType: 'solid',
-          color: '#000',
+          color: this.changeColor(this.mode),
           height: 6,
           offsetX: 0,
           offsetY: 0
         },
       },
       yaxis: {
-        // axisTicks: {
-        //   show: true,
-        //   borderType: 'solid',
-        //   color: '#78909C',
-        //   width: 6,
-        //   offsetX: 0,
-        //   offsetY: 0
-        // },
         min: 0,
         max: 120,
         tickAmount: 4,
@@ -320,24 +313,21 @@ export class TodayComponent implements OnDestroy{
             show: true
           }
         },
-        borderColor: "#CCCCCC"
+        borderColor: '#CCCCCC'
       }
     };
+    /*-------Third Chart--------- */
     this.thirdChartOptions = {
       series: [
         {
-          name: "Guests",
+          name: 'Guests',
           data: [78, 80, 63, 60, 97, 38, 70],
         },
-        // {
-          // name: "",
-          // data: [],
-        // }
       ],
       chart: {
         height: 250,
         width: 900,
-        type: "line",
+        type: 'line',
         toolbar: {
           show: false
         },
@@ -348,25 +338,25 @@ export class TodayComponent implements OnDestroy{
       stroke: {
         width: 2,
         colors: this.changeOneLine(this.mode),
-        curve: "straight",
+        curve: 'straight',
         dashArray: [0, 0, 0]
       },
       title: {
-        text: "GUESTS",
-        align: "left",
+        text: 'GUESTS',
+        align: 'left',
         offsetY: 15,
         offsetX: 10,
         style: {
           fontSize: '18px',
           fontWeight: '800',
-          fontFamily: 'Avenir',
+          fontFamily: 'Roboto',
           color: this.changeColor(this.mode)
         },
       },
       legend: {
         show: true,
         position: 'top',
-        horizontalAlign: "right",
+        horizontalAlign: 'right',
         markers : {
           fillColors: this.changeOneLine(this.mode),
           width: 10,
@@ -401,32 +391,24 @@ export class TodayComponent implements OnDestroy{
           },
         },
         categories: [
-          "10",
-          "11",
-          "12",
-          "13",
-          "14",
-          "15",
-          "16",
+          '10',
+          '11',
+          '12',
+          '13',
+          '14',
+          '15',
+          '16',
         ],
         axisTicks: {
           show: true,
           borderType: 'solid',
-          color: '#000',
+          color: this.changeColor(this.mode),
           height: 6,
           offsetX: 0,
           offsetY: 0
         }
       },
       yaxis: {
-        // axisTicks: {
-        //   show: true,
-        //   borderType: 'solid',
-        //   color: '#78909C',
-        //   width: 6,
-        //   offsetX: 0,
-        //   offsetY: 0
-        // },
         min: 0,
         max: 120,
         tickAmount: 4,
@@ -442,7 +424,7 @@ export class TodayComponent implements OnDestroy{
             show: true
           },
         },
-        borderColor: "#CCCCCC"
+        borderColor: '#CCCCCC'
       }
     };
   }
@@ -467,9 +449,9 @@ export class TodayComponent implements OnDestroy{
   }
   changeLineColor(mode) {
     if (mode === 'dark') {
-      return ["#4FC3F7", "#03A9F4"];
+      return ['#4FC3F7', '#03A9F4'];
     } else if (mode === 'light') {
-      return ["#01579B", "#03A9F4"];
+      return ['#01579B', '#03A9F4'];
     } else if (mode === 'orange') {
       return ['#FF6F00', '#FF8F00'];
     }
