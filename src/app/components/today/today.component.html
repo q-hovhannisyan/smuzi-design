@@ -1,13 +1,13 @@
 <div class="main-wrapper">
   <div class="top-banner">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-12 col-lg-4 text-center pr-1 ">
+      <div class="row today-block">
+        <div class="col-12 col-lg-4 text-center today-item">
           <div class="header-tabs-border left-block ">
             <p><span>July 1</span>, 2020</p>
           </div>
         </div>
-        <div class="col-12 col-lg-8 pl-1">
+        <div class="col-12 col-lg-8 today-item">
           <div class="d-flex justify-content-between align-items-center header-tabs-border right-block">
             <p>Historical Information</p>
             <div class="buttons-wrapper">
@@ -22,8 +22,8 @@
     </div>
   </div>
   <div class="container-fluid charts">
-    <div class="row">
-      <div class="col-lg-4 pr-1">
+    <div class="row today-block">
+      <div class="col-lg-4 today-item">
         <div class="chart-info revenue text-center">
           <h2>Revenue</h2>
           <div class="d-flex justify-content-between">
@@ -42,9 +42,9 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-8 pl-1">
+      <div class="col-lg-8 today-item">
         <div class="chart-item d-flex">
-          <div class="w">
+          <div class="">
             <apx-chart
                 [series]="chartOptions.series"
                 [chart]="chartOptions.chart"
@@ -77,8 +77,8 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-4 pr-1">
+    <div class="row today-block">
+      <div class="col-lg-4 today-item">
         <div class="chart-info rooms text-center">
           <h2>Rooms</h2>
           <div class="d-flex justify-content-between">
@@ -97,9 +97,9 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-8 pl-1">
+      <div class="col-lg-8 today-item">
         <div class="chart-item d-flex">
-          <div class="w">
+          <div class="">
             <apx-chart
                 [series]="secondChartOptions.series"
                 [chart]="secondChartOptions.chart"
@@ -131,8 +131,8 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-4 pr-1">
+    <div class="row today-block">
+      <div class="col-lg-4 today-item">
         <div class="chart-info guests text-center">
           <h2>Guests</h2>
           <div class="d-flex justify-content-around">
@@ -151,9 +151,9 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-8 pl-1">
+      <div class="col-lg-8 today-item">
         <div class="chart-item d-flex">
-            <div class="w">
+            <div class="">
               <apx-chart
                   [series]="thirdChartOptions.series"
                   [chart]="thirdChartOptions.chart"

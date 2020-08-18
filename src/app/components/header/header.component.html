@@ -14,7 +14,7 @@
       <button mat-button [routerLink]="['/historic']">HISTORIC</button>
       <button mat-button [routerLink]="['/staff']">STAFF</button>
       <button mat-button [matMenuTriggerFor]="beforeMenu" class="mode-btn"><mat-icon>brightness_6</mat-icon></button>
-      <mat-menu #beforeMenu="matMenu" xPosition="before">
+      <mat-menu #beforeMenu="matMenu" xPosition="before" class="dropdown">
         <button mat-menu-item (click)="changeTheme('light')">Light Mode</button>
         <button mat-menu-item (click)="changeTheme('dark')">Dark Mode</button>
         <button mat-menu-item (click)="changeTheme('orange')">Orange Mode</button>

@@ -48,12 +48,16 @@ export class HistoricChartItemComponent implements OnInit, OnDestroy, OnChanges 
     this.subscription = service.nameChange.subscribe((value) => {
       this.mode = value;
       this.updateTheme();
+      this.loadTitles();
     });
     this.updateTheme();
+    this.loadTitles();
   }
-
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+  loadTitles() {
+    this.chartOptions.title.text = this.title;
   }
   updateTheme() {
     this.chartOptions = {
@@ -200,6 +204,7 @@ export class HistoricChartItemComponent implements OnInit, OnDestroy, OnChanges 
       }
     };
   }
+
   changeColor(mode) {
     if (mode === 'dark') {
       return '#fff';
@@ -218,7 +223,6 @@ export class HistoricChartItemComponent implements OnInit, OnDestroy, OnChanges 
       return ['#FF8F00', '#BF360C'];
     }
   }
-
   changeStrokeColor(mode) {
     if (mode === 'dark') {
       return [ '#0594E6'];
@@ -230,19 +234,20 @@ export class HistoricChartItemComponent implements OnInit, OnDestroy, OnChanges 
   }
   changeFillColor(mode) {
     if (mode === 'dark') {
-      return [ '#025998'];
-    } else if (mode === 'light') {
       return [ '#0277BD'];
+    } else if (mode === 'light') {
+      return [ '#01579B'];
     } else if (mode === 'orange') {
       return [ '#FF8F00'];
     }
   }
-
   ngOnInit(): void {
-    this.chartOptions.title.text = this.title;
+    this.service.title = this.title;
+    this.chartOptions.title.text = this.service.title;
   }
   ngOnChanges() {
     this.chartOptions.title.text = this.title;
+    this.chartOptions.title.text = this.service.title;
   }
 
 }

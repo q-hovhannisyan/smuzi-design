@@ -2,7 +2,6 @@ import {Component, OnDestroy, ViewChild, OnInit} from '@angular/core';
 import { ThemesService } from '../../services/themes.service';
 import { HttpClient } from '@angular/common/http';
 
-
 import {
   ChartComponent,
   ApexAxisChartSeries,
@@ -246,6 +245,7 @@ export class MarketComponent implements OnDestroy, OnInit {
       ]
     },
   ];
+
   public months: any = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   public curYear: any = new Date().getFullYear();
   public curMonth: any = new Date().getMonth();
@@ -305,7 +305,6 @@ export class MarketComponent implements OnDestroy, OnInit {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
   updateTheme() {
     this.chartOptions = {
       series: [
@@ -407,11 +406,7 @@ export class MarketComponent implements OnDestroy, OnInit {
         ],
         axisTicks: {
           show: true,
-          borderType: 'solid',
-          color: '#fff',
-          height: 6,
-          offsetX: 0,
-          offsetY: 0
+          color: this.changeColor(this.mode)
         }
       },
       yaxis: {
@@ -422,6 +417,10 @@ export class MarketComponent implements OnDestroy, OnInit {
           style: {
             colors: this.changeColor(this.mode)
           },
+        },
+        axisTicks: {
+          show: true,
+          color: this.changeColor(this.mode)
         }
       },
       grid: {

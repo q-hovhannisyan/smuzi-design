@@ -48,6 +48,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .light-theme {
   min-height: 100vh;
   background: linear-gradient(0, #8E9DA9, #ECF0F2);
+  .menu_items {
+    button:focus {
+      outline: none;
+      border: 1px solid #000;
+    }
+  }
+  .header-tabs-border {
+    border-bottom: 1px solid #000;
+  }
   .chart-info {
     &.revenue {
       background: linear-gradient(90deg, #11AEC5, #0B8C9F);
@@ -138,16 +147,42 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       background-color: #EEF2F3;
     }
   }
+  /* ----- staff ------ */
+  .staff {
+    .header-title {
+      border-bottom: 1px solid #000;
+    }
+    .block {
+      background-color: #EEF2F3;
+    }
+    .options {
+      select {
+        background: rgba(255, 255, 255, 0.5);
+        background-image:
+                linear-gradient(45deg, transparent 50%, #000 60%),
+                linear-gradient(135deg, #000 40%, transparent 50%) !important;
+      }
+    }
+  }
 }
 
 /* ------------- dark theme ---------- */
 .dark-theme {
   min-height: 100vh;
   background: linear-gradient(0, #2C354A, #828F95);
+  .menu_items {
+    button:focus {
+      outline: none;
+      border: 1px solid #fff;
+    }
+  }
   .header_content {
     .menu_items {
       color: #ffffff;
     }
+  }
+  .header-tabs-border {
+    border-bottom: 1px solid #fff;
   }
   .chart-info {
     &.revenue {
@@ -170,6 +205,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
           background-color: #859398;
           color: #000000;
           border-color: #000000;
+        }
+        .cdk-focused.cdk-mouse-focused {
+          background-color: #D7DDE8 !important;
+          outline: #D7DDE8 !important;
+          color: #283048;
         }
       }
     }
@@ -253,6 +293,32 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       }
     }
   }
+  /* ----- staff ----- */
+  .staff {
+    .header-title {
+      border-bottom: 1px solid #ffffff;
+      color: #ffffff;
+    }
+    .price-block {
+      color: #ffffff;
+    }
+    .block {
+      background-color: #283048;
+    }
+    .options {
+      label {
+        color: #ffffff;
+      }
+      select {
+        background: rgba(0, 0, 0, 0.2);
+        border-color: rgba(0, 0, 0, 0.2);
+        color: #fff !important;
+        background-image:
+                linear-gradient(45deg, transparent 50%, #fff 60%),
+                linear-gradient(135deg, #fff 40%, transparent 50%) !important;
+      }
+    }
+  }
 }
 
 
@@ -260,6 +326,28 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .orange-theme {
   min-height: 100vh;
   background: linear-gradient(0, #8E9DA9, #ECF0F2);
+  .menu_items {
+    button:focus {
+      outline: none;
+      border: 1px solid #000;
+    }
+  }
+  .header-tabs-border {
+    border-bottom: 1px solid #000;
+  }
+  .top-banner {
+    .buttons-wrapper {
+      button {
+        background-color: #8E9EAB;
+      }
+      .cdk-focused.cdk-mouse-focused {
+        background-color: #283048 !important;
+        outline: #283048 !important;
+        color: #fff;
+      }
+    }
+  }
+
   .chart-info {
     &.revenue {
       background: linear-gradient(90deg, #F1B72E, #C09223);
@@ -337,6 +425,23 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     }
     .chart-item {
       background-color: #EEF2F3;
+    }
+  }
+  /* ----- staff ------ */
+  .staff {
+    .header-title {
+      border-bottom: 1px solid #000;
+    }
+    .block {
+      background-color: #EEF2F3;
+    }
+    .options {
+      select {
+        background: rgba(255, 255, 255, 0.5);
+        background-image:
+                linear-gradient(45deg, transparent 50%, #000 60%),
+                linear-gradient(135deg, #000 40%, transparent 50%) !important;
+      }
     }
   }
 }

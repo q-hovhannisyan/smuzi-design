@@ -1,37 +1,41 @@
 .main-wrapper {
-  padding: 0 0 20px 5px;
-}
-.top-banner {
-  .header-tabs-border {
-    border-bottom: 1px solid #000;
-    height: 100%;
-  }
-  .left-block {
-    font-size: 24px;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    span {
-      font-weight: 900;
+  padding: 0 5px 20px 5px;
+  .today-block {
+    padding: 0 10px;
+    .today-item {
+      padding: 0 5px;
     }
   }
-  .right-block {
-    p {
-      text-transform: uppercase;
+  .top-banner {
+    .header-tabs-border {
+      height: 100%;
+    }
+    .left-block {
       font-size: 24px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        font-weight: 900;
+      }
     }
-    .buttons-wrapper {
-      padding-bottom: 15px;
-      button {
-        width: 80px;
-        height: 30px;
-        box-shadow: none !important;
-        line-height: 0 !important;
+    .right-block {
+      p {
+        text-transform: uppercase;
+        font-size: 24px;
+      }
+      .buttons-wrapper {
+        padding-bottom: 15px;
+        button {
+          width: 80px;
+          height: 30px;
+          box-shadow: none !important;
+          line-height: 0 !important;
+        }
       }
     }
   }
-
 }
 
 .charts {

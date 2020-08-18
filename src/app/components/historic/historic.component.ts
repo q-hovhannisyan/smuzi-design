@@ -296,7 +296,6 @@ export class HistoricComponent implements OnInit, OnDestroy {
           show: true,
           borderType: 'solid',
           color: this.changeColor(this.mode),
-          height: 3,
         },
         axisBorder: {
           show: true,
@@ -322,7 +321,6 @@ export class HistoricComponent implements OnInit, OnDestroy {
         tickAmount: 4,
       }
     };
-
     /* ---------- columns chart -------- */
     this.columnsChartOptions = {
       series: [
@@ -394,9 +392,7 @@ export class HistoricComponent implements OnInit, OnDestroy {
         tickAmount: 10,
         axisTicks: {
           show: true,
-          borderType: 'solid',
           color: this.changeColor(this.mode),
-          height: 3,
         },
         labels: {
           show: true,
@@ -421,6 +417,9 @@ export class HistoricComponent implements OnInit, OnDestroy {
             fontSize: '10px',
             fontFamily: 'Roboto',
             colors: this.changeColor(this.mode)
+          },
+          formatter(val) {
+            return 'R$ ' + val;
           }
         },
       },
@@ -464,20 +463,20 @@ export class HistoricComponent implements OnInit, OnDestroy {
 
   changeStrokeColor(mode) {
     if (mode === 'dark') {
-      return [ '#0594E6'];
+      return ['#0594E6'];
     } else if (mode === 'light') {
-      return [ '#4FC3F7'];
+      return ['#4FC3F7'];
     } else if (mode === 'orange') {
-      return [ '#BF360C'];
+      return ['#BF360C'];
     }
   }
   changeFillColor(mode) {
     if (mode === 'dark') {
-      return [ '#025998'];
+      return ['#0277BD'];
     } else if (mode === 'light') {
-      return [ '#0277BD'];
+      return ['#01579B'];
     } else if (mode === 'orange') {
-      return [ '#FF8F00'];
+      return ['#FF8F00'];
     }
   }
 
@@ -499,7 +498,6 @@ export class HistoricComponent implements OnInit, OnDestroy {
       return ['#D84315', '#FF9800', '#FF8F00', '#D84315', '#FF9800'];
     }
   }
-
   changeColumnsColor(mode) {
     if (mode === 'dark') {
       return ['#51C4F4', '#0679BA'];

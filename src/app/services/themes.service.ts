@@ -6,6 +6,7 @@ import {Subject} from 'rxjs';
 })
 export class ThemesService {
   name: any;
+  title: any;
 
   nameChange: Subject<string> = new Subject<string>();
   constructor() {

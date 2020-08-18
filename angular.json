@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angularDashboard": {
+    "smuzi-design": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angularDashboard",
+            "outputPath": "dist/smuzi-design",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angularDashboard:build"
+            "browserTarget": "smuzi-design:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angularDashboard:build:production"
+              "browserTarget": "smuzi-design:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angularDashboard:build"
+            "browserTarget": "smuzi-design:build"
           }
         },
         "test": {
@@ -117,18 +117,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angularDashboard:serve"
+            "devServerTarget": "smuzi-design:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angularDashboard:serve:production"
+              "devServerTarget": "smuzi-design:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "angularDashboard",
+  "defaultProject": "smuzi-design",
   "cli": {
     "analytics": false
   }

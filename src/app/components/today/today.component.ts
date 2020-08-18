@@ -176,12 +176,8 @@ export class TodayComponent implements OnDestroy{
         ],
         axisTicks: {
           show: true,
-          borderType: 'solid',
-          color: '#fff',
-          height: 6,
-          offsetX: 0,
-          offsetY: 0
-        }
+          color: this.changeColor(this.mode),
+        },
       },
       yaxis: {
         min: 0,
@@ -191,7 +187,11 @@ export class TodayComponent implements OnDestroy{
           style: {
             colors: this.changeColor(this.mode)
           },
-        }
+        },
+        axisTicks: {
+          show: true,
+          color: this.changeColor(this.mode),
+        },
       },
       grid: {
         xaxis: {
@@ -290,11 +290,7 @@ export class TodayComponent implements OnDestroy{
         ],
         axisTicks: {
           show: true,
-          borderType: 'solid',
           color: this.changeColor(this.mode),
-          height: 6,
-          offsetX: 0,
-          offsetY: 0
         },
       },
       yaxis: {
@@ -305,7 +301,11 @@ export class TodayComponent implements OnDestroy{
           style: {
             colors: this.changeColor(this.mode)
           },
-        }
+        },
+        axisTicks: {
+          show: true,
+          color: this.changeColor(this.mode),
+        },
       },
       grid: {
         xaxis: {
@@ -401,11 +401,7 @@ export class TodayComponent implements OnDestroy{
         ],
         axisTicks: {
           show: true,
-          borderType: 'solid',
           color: this.changeColor(this.mode),
-          height: 6,
-          offsetX: 0,
-          offsetY: 0
         }
       },
       yaxis: {
@@ -416,6 +412,10 @@ export class TodayComponent implements OnDestroy{
           style: {
             colors: this.changeColor(this.mode)
           },
+        },
+        axisTicks: {
+          show: true,
+          color: this.changeColor(this.mode),
         }
       },
       grid: {

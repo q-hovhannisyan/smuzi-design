@@ -1,1 +1,149 @@
-<p>staff works!</p>
+<div class="staff">
+  <div class="container-fluid">
+    <div class="row staff-block">
+      <div class="col-lg-12 staff-item">
+        <div class="header-title text-center">
+          <h3>Staff</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row staff-block">
+      <div class="col-lg-4 staff-item">
+        <div class="price-block block">
+          <span>Avg per Guest</span>
+          <h3>R$ 308,78</h3>
+        </div>
+      </div>
+      <div class="col-lg-4 staff-item">
+        <div class="price-block block">
+          <span>Avg per Check</span>
+          <h3>R$ 534,26</h3>
+        </div>
+      </div>
+      <div class="col-lg-4 staff-item">
+        <div class="d-flex justify-content-between options">
+          <div class="option-group">
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">DAY PART</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>All</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+          <div class="option-group">
+            <div class="form-group">
+              <label for="exampleFormControlSelect2">FAMILY GROUP</label>
+              <select class="form-control" id="exampleFormControlSelect2">
+                <option>All</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+          <div class="option-group">
+            <div class="form-group">
+              <label for="exampleFormControlSelect3">FAMILY GROUP</label>
+              <select class="form-control" id="exampleFormControlSelect3">
+                <option>All</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+          <div class="option-group">
+            <div class="form-group">
+              <label for="exampleFormControlSelect4">FAMILY GROUP</label>
+              <select class="form-control" id="exampleFormControlSelect4">
+                <option>All</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row staff-block">
+      <div class="col-lg-4 staff-item">
+        <div class="block chart-item">
+          <apx-chart
+              [series]="chartOptions.series"
+              [chart]="chartOptions.chart"
+              [dataLabels]="chartOptions.dataLabels"
+              [plotOptions]="chartOptions.plotOptions"
+              [xaxis]="chartOptions.xaxis"
+              [yaxis]="chartOptions.yaxis"
+              [title]="chartOptions.title"
+              [stroke]="chartOptions.stroke"
+              [fill]="chartOptions.fill"
+              [grid]="chartOptions.grid"
+              [legend]="chartOptions.legend"
+              [tooltip]="chartOptions.tooltip"
+          ></apx-chart>
+        </div>
+      </div>
+      <div class="col-lg-4 staff-item">
+        <div class="block chart-item">
+          <app-staff-chart-item></app-staff-chart-item>
+        </div>
+      </div>
+      <div class="col-lg-4 staff-item">
+        <div class="block chart-item h-100">
+          <apx-chart
+              [series]="donutChartOptions.series"
+              [chart]="donutChartOptions.chart"
+              [dataLabels]="donutChartOptions.dataLabels"
+              [plotOptions]="donutChartOptions.plotOptions"
+              [xaxis]="donutChartOptions.xaxis"
+              [yaxis]="donutChartOptions.yaxis"
+              [title]="donutChartOptions.title"
+              [stroke]="donutChartOptions.stroke"
+              [fill]="donutChartOptions.fill"
+              [grid]="donutChartOptions.grid"
+              [legend]="donutChartOptions.legend"
+              [tooltip]="chartOptions.tooltip"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+    <div class="row staff-block">
+      <div class="col-lg-4 staff-item">
+        <div class="block chart-item">
+          <app-staff-chart-item></app-staff-chart-item>
+        </div>
+      </div>
+      <div class="col-lg-4 staff-item">
+        <div class="block chart-item">
+          <app-staff-chart-item></app-staff-chart-item>
+        </div>
+      </div>
+      <div class="col-lg-4 staff-item">
+        <div class="block chart-item">
+          <apx-chart
+              [series]="bubbleChartOptions.series"
+              [chart]="bubbleChartOptions.chart"
+              [xaxis]="bubbleChartOptions.xaxis"
+              [fill]="bubbleChartOptions.fill"
+              [dataLabels]="bubbleChartOptions.dataLabels"
+              [title]="bubbleChartOptions.title"
+              [yaxis]="bubbleChartOptions.yaxis"
+              [grid]="bubbleChartOptions.grid"
+              [tooltip]="chartOptions.tooltip"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

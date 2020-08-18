@@ -1,5 +1,11 @@
 .market {
   padding-bottom: 20px;
+  .market-block {
+    padding: 0 15px;
+    .market-item {
+      padding: 0 5px;
+    }
+  }
   .header-title {
     height: 100%;
     h3 {
@@ -72,7 +78,7 @@
     padding-top: 12px;
     &.first-datePicker {
       margin-top: 20px;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       height: 265px;
     }
     &.second-datePicker {
@@ -130,6 +136,89 @@
     }
     .empty {
       border: none;
+    }
+  }
+}
+
+
+@media (max-width: 1600px) {
+  .datePicker {
+    .daynames {
+      .dayname {
+        width: 12%;
+      }
+    }
+    .days {
+      .day {
+        width: 12%;
+      }
+    }
+  }
+}
+@media (max-width: 1500px) {
+  .datePicker {
+    .days {
+      .day {
+        span:first-child {
+          margin-left: 30%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1300px) {
+  .datePicker {
+    .daynames {
+      .dayname {
+        width: 11.5%;
+      }
+    }
+    .days {
+      .day {
+        width: 11.5%;
+        span:first-child {
+          font-size: 12px;
+          margin-left: 20%;
+        }
+        span:last-child {
+          font-size: 8px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1045px) {
+  .datePicker {
+    .daynames {
+      .dayname {
+        width: 11%;
+      }
+    }
+    .days {
+      .day {
+        width: 11%;
+        span:first-child {
+          margin-left: 20%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .datePicker {
+    .daynames {
+      .dayname {
+        width: 13.2%;
+      }
+    }
+    .days {
+      .day {
+        width: 13.2%;
+        span:first-child {
+          margin-left: 45%;
+        }
+      }
     }
   }
 }

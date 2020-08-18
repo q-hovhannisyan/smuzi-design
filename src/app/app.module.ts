@@ -17,6 +17,7 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { HistoricComponent } from './components/historic/historic.component';
 import { StaffComponent } from './components/staff/staff.component';
 import { HistoricChartItemComponent } from './components/historic-chart-item/historic-chart-item.component';
+import { StaffChartItemComponent } from './components/staff-chart-item/staff-chart-item.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { HistoricChartItemComponent } from './components/historic-chart-item/his
     MarketComponent,
     HistoricComponent,
     StaffComponent,
-    HistoricChartItemComponent
+    HistoricChartItemComponent,
+    StaffChartItemComponent
   ],
   imports: [
     BrowserModule,
